@@ -1,0 +1,12 @@
+targetSystem: "linux"
+datadog:
+  apiKeyExistingSecret: datadog-agent
+  logLevel: DEBUG
+  processAgent:
+    enabled: false
+  kubelet:
+    tlsVerify: false
+  kubeStateMetricsEnabled: false
+  logs:
+    enabled: true
+    containerCollectAll: true
