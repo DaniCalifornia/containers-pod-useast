@@ -63,7 +63,7 @@ In metricName set the datadogmetric_name to match the name set in DatadogMetric 
 
 Create the HPA manifest by naming it HPA.yaml:
 ```
-apiVersion: autoscaling/v2beta1
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: kubetest
@@ -73,12 +73,15 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: hpa
+    name: nginx
   metrics:
   - type: External
     external:
-      metricName: datadogmetric@default:test-metric
-      targetAverageValue: 9
+      metric:
+        name: datadogmetric@default:test-metric
+      target:
+        type: AverageValue
+        averageValue: 9
 ```
 
 # Step 3 - Creating the DatadogMetric manifest
