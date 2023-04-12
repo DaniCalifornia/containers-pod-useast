@@ -1,0 +1,11 @@
+{
+  "id": "",
+  "site": "datadoghq.com",
+  "accessKey": "",
+  "secretAccessKey": "",
+  "privateKey": "",
+  "publicKey": {
+    "pem": "",
+    "fingerprint": ""
+  }
+}
